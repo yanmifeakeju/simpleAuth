@@ -1,0 +1,26 @@
+<section id="showcase" style="margin-top: 100px">
+  <div class="showcase-content">
+    <div class="form-container">
+      <%- error ? error : null %>
+      <form action="/auth/login" method="post">
+        <%- messages ? messages : null %>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Email" />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <div>
+          <button type="submit" class="btn">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

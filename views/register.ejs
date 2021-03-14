@@ -1,0 +1,53 @@
+<!-- showcase -->
+<div class="container">
+  <div class="form-container">
+    <div class="info">
+      <h1>SimpleAuth</h1>
+      <p>Create an account</p>
+    </div>
+    <div class="register-form">
+      <%- messages ? messages : null %>
+      <form action="/users/register" method="post">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="name" value=<%-
+          valErrors ? fields.name : " " %> >
+
+          <small><%- valErrors ? valErrors.name : ' ' %></small>
+        </div>
+
+        <div>
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username"
+          placeholder="username" value= <%- valErrors ? fields.username : " " %>
+          >
+
+          <small><%- valErrors ? valErrors.username : ' ' %></small>
+        </div>
+
+        <div>
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" placeholder="Email"
+          value=<%= valErrors ? fields.email : " " %> >
+
+          <small><%-valErrors ? valErrors.email : '' %></small>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password"
+          placeholder="Password" value=<%= valErrors ? fields.password : " " %>
+          >
+
+          <small><%- valErrors ? valErrors.password : '' %></small>
+        </div>
+
+        <div class="button-container">
+          <button type="submit" class="btn">Sign in</button>
+        </div>
+        <small>Already have an account? <a href="/auth/login">login</a></small>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/javascripts/main.js"></script>
